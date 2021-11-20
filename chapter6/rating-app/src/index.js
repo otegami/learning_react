@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
+import ColorProvider from './components/ColorProvider'
 import App from './App';
 
+export const ColorContext = createContext()
+
 ReactDOM.render(
-  <App />,
+  <ColorProvider>
+    <App />
+  </ColorProvider>,
   document.getElementById('root')
 );

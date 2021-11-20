@@ -1,22 +1,21 @@
 import { FaTrash } from "react-icons/fa"
 import StarRating from "./StarRating"
+import { useColors } from './ColorProvider'
 
-const Color = ({
-  id,
-  title,
-  color,
-  rating,
-  onRemove = f => f,
-  onRate = f => f
-}) => {
+const Color = ({ id, title, color, rating }) => {
+  const { rateColor, removeColor } = useColors()
+
   return (
     <section>
       <h1>{title}</h1>
-      <button onClick={() => onRemove(id)}>
+      <button onClick={() => removeColor(id)}>
         <FaTrash />
       </button>
       <div style={{ height: 50, background: color }} />
-      <StarRating selectedStars={rating} onRate={rating => onRate(id, rating)} />
+      <StarRating
+        selectedStars={rating}
+        onRate={rating => rateColor(id, rating)}
+      />
     </section>
   )
 }
