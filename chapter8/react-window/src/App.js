@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import faker from 'faker'
+import List from './components/List'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const biglist = [...Array(5000)].map(() => ({
+  name: faker.name.findName(),
+  email: faker.internet.email(),
+  avatar: faker.internet.avatar()
+}))
+
+const App = () => {
+  const renderItem = item => (
+    <div style={{ display: 'flex' }}>
+      <img src={item.avatar} alt={item.name} width={50} />
+      <p>
+        {item.name} - {item.eamil}
+      </p>
     </div>
-  );
+  )
+
+  return <List data={biglist} renderItem={renderItem} />
 }
 
-export default App;
+export default App
