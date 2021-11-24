@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Star from './components/Star';
+import App from './App';
 
 ReactDOM.render(
-  <Star />,
+  <App />,
   document.getElementById('root')
 );
