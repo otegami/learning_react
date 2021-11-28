@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, Outlet } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -18,6 +18,7 @@ const About = () => {
   return (
     <div>
       <h1>[About]</h1>
+      <Outlet />
     </div>
   )
 }
