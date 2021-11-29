@@ -1,4 +1,4 @@
-import Color from './Color'
+import Color from './Colors/Color'
 import { useColors } from './ColorProvider'
 
 const ColorList = () => {
