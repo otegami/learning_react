@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import Color from './Color'
 import { useColors } from './ColorProvider'
 
