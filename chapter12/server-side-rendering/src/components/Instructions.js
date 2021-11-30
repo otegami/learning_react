@@ -1,3 +1,4 @@
+import React from 'react'
 const Instructions = ({ title, steps }) => {
   return (
     <session className="instructions">

@@ -1,10 +1,11 @@
 import path from "path";
 import fs from "fs";
+import React from "react"
 import ReactDOMServer from 'react-dom/server'
 import express from "express"
 
-import { Menu } from "../src/components/Menu"
-import { data } from "../src/data/recipes.json"
+import data from "../src/data/recipes.json"
+import Menu from "../src/components/Menu"
 
 const PORT = process.env.PORT || 4000
 const app = express()
